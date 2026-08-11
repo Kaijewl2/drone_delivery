@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drone delivery</title>
+  <script src=index.js></script>
+  <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet" />
+</head>
+
+<body>
+  <h1>
+    Keng's
+  </h1>
+
+  <div id="map" style="width: 100%; height: 500px"></div>
+
+  <div id="destination">
+    <div>
+      <br>
+      <label for="lat">latitude</label>
+      <br>
+      <input type="number" id="lat" name="latitude" value="625.388" />
+    </div>
+
+    <div>
+      <br>
+      <label for="lon">longitude</label>
+      <br>
+      <input type="number" id="lon" name="lon" value="44.517" />
+    </div>
+
+    <!--cause for alteration-->
+    <button id="submit" onclick="window.location.reload()">go</button>
+  </div>
+
+
+  <script>
+    var lat = document.getElementById("lat").value;
+    var lon = document.getElementById("lon").value;
+    var map = new maplibregl.Map({
+      style: 'https://tiles.openfreemap.org/styles/liberty',
+      center: [lat, lon],
+      zoom: 9.5,
+      container: 'map',
+    })
+
+    function update_location() {
+      lat = document.getElementById("lat").value;
+      lon = document.getElementById("lon").value;
+
+      map.center = [lat, lon];
+      console.log("latitude- ", lat);
+      console.log("longitude-", lon);
+    }
+  </script>
+
+</body>
+
+</html>

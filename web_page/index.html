@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>drone delivery</title>
-  <script src=index.js></script>
   <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
   <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet" />
 </head>
@@ -16,20 +15,21 @@
   </h1>
 
   <div id="map" style="width: 100%; height: 500px"></div>
+  <pre id="coords" class="coords"></pre>
 
   <div id="destination">
     <div>
       <br>
       <label for="lat">latitude</label>
       <br>
-      <input type="number" id="lat" name="latitude" value="625.388" />
+      <input type="number" id="lat" name="latitude" value="-75.189" />
     </div>
 
     <div>
       <br>
       <label for="lon">longitude</label>
       <br>
-      <input type="number" id="lon" name="lon" value="44.517" />
+      <input type="number" id="lon" name="lon" value="40.686" />
     </div>
 
     <!--cause for alteration-->
@@ -40,12 +40,86 @@
   <script>
     var lat = document.getElementById("lat").value;
     var lon = document.getElementById("lon").value;
+
+    const coords = document.getElementById("coords");
+
+    coords.innerHTML =
+      `Longitude: ${lon}<br/>Latitude: ${lat}`;
+
     var map = new maplibregl.Map({
       style: 'https://tiles.openfreemap.org/styles/liberty',
       center: [lat, lon],
       zoom: 9.5,
       container: 'map',
+      style: {
+        version: 8,
+        sources: {
+          osm: {
+            type: 'raster',
+            tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
+            tileSize: 256,
+            attribution: '&copy; OpenStreetMap Contributors',
+            maxzoom: 19
+          },
+
+          terrainSource: {
+            type: 'raster-dem',
+            url: 'https://tiles.mapterhorn.com/tilejson.json'
+          },
+          hillshadeSource: {
+            type: 'raster-dem',
+            url: 'https://tiles.mapterhorn.com/tilejson.json'
+          }
+        },
+        layers: [
+          {
+            id: 'osm',
+            type: 'raster',
+            source: 'osm'
+          },
+          {
+            id: 'hills',
+            type: 'hillshade',
+            source: 'hillshadeSource',
+            layout: {visibility: 'visible'},
+            paint: {'hillshade-shadow-color': '#473B24'}
+          }
+        ],
+        terrain: {
+          source: 'terrainSource',
+          exaggeration: 1
+        },
+        sky: {}
+      },
     })
+
+    map.addControl(
+      new maplibregl.NavigationControl({
+        visualizePitch: true,
+        showZoom: true,
+        showCompass: true
+      })
+    );
+
+    map.addControl(
+      new maplibregl.TerrainControl({
+        source: 'terrainSource',
+        exaggeration: 1
+      })
+    );
+
+    let marker = new maplibregl.Marker({draggable: true})
+      .setLngLat([lat, lon])
+      .addTo(map);
+
+    function onDragEnd() {
+      lng_lat = marker.getLngLat();
+      coords.style.display = 'block';
+      coords.innerHTML =
+        `Longitude: ${lng_lat.lng}<br/>Latitude: ${lng_lat.lat}`;
+    }
+
+    marker.on('dragend', onDragEnd);
 
     function update_location() {
       lat = document.getElementById("lat").value;

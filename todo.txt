@@ -1,0 +1,6 @@
+FAR STAR ULTIMATE PLAN
+----------------------
+
+O | connect JS to C++ script
+O | send coords from UI to C++ script 
+O | working autonomous mission creation, started from webpage

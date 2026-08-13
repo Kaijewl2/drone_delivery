@@ -1,18 +1,17 @@
-#include "headers/Missions.h"
+#include "headers/Pilot.h"
 #include <iostream>
-#include <memory>
 #include <string>
-#include <vector>
 using namespace std;
 
 int main() {
 
-  std::shared_ptr<Missions> mission;
+  Pilot pilot;
 
-  // std::vector<float> destination = mission->go_to_location(21.03f, 48.10f);
+  pilot.set_longitude(21.02);
+  pilot.set_latitude(41.201);
 
-  cout << "Longitude: " << to_string(mission->longitude)
-       << "\n Latitude: " << to_string(mission->latitude);
+  cout << "Longitude: " << to_string(pilot.get_longitude())
+       << "\nLatitude: " << to_string(pilot.get_latitude());
 
   return 0;
 }

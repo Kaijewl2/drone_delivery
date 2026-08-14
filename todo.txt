@@ -1,6 +1,12 @@
 FAR STAR ULTIMATE PLAN
 ----------------------
 
-O | connect JS to C++ script
+PRESSING MATTERS
+----------------------
+/ | connect JS to C++ script
 O | send coords from UI to C++ script 
 O | working autonomous mission creation, started from webpage
+
+later
+----------------------
+O shorten run command

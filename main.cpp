@@ -1,10 +1,8 @@
 #include "headers/Pilot.h"
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-
   Pilot pilot;
 
   pilot.set_longitude(21.02);

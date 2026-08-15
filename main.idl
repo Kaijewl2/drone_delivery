@@ -8,17 +8,15 @@ interface Pilot{
   void set_destination(float lat, float lng);
 
   void start_mission(DOMString mission_name);
-  }
+  };
 
 interface Missions{
   void Missions();
   void start_mission(DOMString mission_name);
-}
+};
 
 interface Coordinates {
   void Coordinates();
-  float latitude;
-  float longitude;
 
   float get_latitiude();
   float get_longitude();
@@ -26,4 +24,4 @@ interface Coordinates {
   void set_latitude(float lat);
   void set_longitude(float lng);
   void set_destination(float lat, float lng);
-  }
+  };

@@ -20,8 +20,9 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/kaijewl2/emsdk/"
+      - "/home/kaijewl2/emsdk/upstream/emscripten/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -31,15 +32,16 @@ events:
       - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest/"
       - "/bin/"
     searched_directories:
+      - "/home/kaijewl2/emsdk/uname"
+      - "/home/kaijewl2/emsdk/upstream/emscripten/uname"
       - "/usr/lib/ccache/uname"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/uname"
       - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -47,7 +49,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
   -
     kind: "message-v1"
@@ -78,8 +79,9 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/home/kaijewl2/emsdk/"
+      - "/home/kaijewl2/emsdk/upstream/emscripten/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -90,8 +92,9 @@ events:
       - "/bin/"
       - "/sbin/"
     searched_directories:
+      - "/home/kaijewl2/emsdk/gmake"
+      - "/home/kaijewl2/emsdk/upstream/emscripten/gmake"
       - "/usr/lib/ccache/gmake"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/gmake"
       - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
       - "/usr/bin/gmake"
@@ -101,15 +104,16 @@ events:
       - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest/gmake"
       - "/bin/gmake"
       - "/sbin/gmake"
+      - "/home/kaijewl2/emsdk/make"
+      - "/home/kaijewl2/emsdk/upstream/emscripten/make"
       - "/usr/lib/ccache/make"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/make"
       - "/usr/local/sbin/make"
       - "/usr/local/bin/make"
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -117,7 +121,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -145,8 +148,8 @@ events:
       - "strip"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -158,8 +161,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/llvm-strip"
+      - "/home/kaijewl2/emsdk/llvm-strip"
       - "/usr/lib/ccache/llvm-strip"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/llvm-strip"
       - "/usr/local/sbin/llvm-strip"
       - "/usr/local/bin/llvm-strip"
       - "/usr/bin/llvm-strip"
@@ -170,15 +173,15 @@ events:
       - "/bin/llvm-strip"
       - "/sbin/llvm-strip"
       - "/home/kaijewl2/emsdk/upstream/emscripten/strip"
+      - "/home/kaijewl2/emsdk/strip"
       - "/usr/lib/ccache/strip"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/strip"
       - "/usr/local/sbin/strip"
       - "/usr/local/bin/strip"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -186,7 +189,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -214,8 +216,8 @@ events:
       - "ld"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -227,15 +229,15 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/ld.lld"
+      - "/home/kaijewl2/emsdk/ld.lld"
       - "/usr/lib/ccache/ld.lld"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/ld.lld"
       - "/usr/local/sbin/ld.lld"
       - "/usr/local/bin/ld.lld"
     found: "/usr/bin/ld.lld"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -243,7 +245,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -271,8 +272,8 @@ events:
       - "objdump"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -284,8 +285,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/llvm-objdump"
+      - "/home/kaijewl2/emsdk/llvm-objdump"
       - "/usr/lib/ccache/llvm-objdump"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/llvm-objdump"
       - "/usr/local/sbin/llvm-objdump"
       - "/usr/local/bin/llvm-objdump"
       - "/usr/bin/llvm-objdump"
@@ -296,15 +297,15 @@ events:
       - "/bin/llvm-objdump"
       - "/sbin/llvm-objdump"
       - "/home/kaijewl2/emsdk/upstream/emscripten/objdump"
+      - "/home/kaijewl2/emsdk/objdump"
       - "/usr/lib/ccache/objdump"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/objdump"
       - "/usr/local/sbin/objdump"
       - "/usr/local/bin/objdump"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -312,7 +313,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -340,8 +340,8 @@ events:
       - "objcopy"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -353,8 +353,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/llvm-objcopy"
+      - "/home/kaijewl2/emsdk/llvm-objcopy"
       - "/usr/lib/ccache/llvm-objcopy"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/llvm-objcopy"
       - "/usr/local/sbin/llvm-objcopy"
       - "/usr/local/bin/llvm-objcopy"
       - "/usr/bin/llvm-objcopy"
@@ -365,15 +365,15 @@ events:
       - "/bin/llvm-objcopy"
       - "/sbin/llvm-objcopy"
       - "/home/kaijewl2/emsdk/upstream/emscripten/objcopy"
+      - "/home/kaijewl2/emsdk/objcopy"
       - "/usr/lib/ccache/objcopy"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/objcopy"
       - "/usr/local/sbin/objcopy"
       - "/usr/local/bin/objcopy"
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -381,7 +381,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -409,8 +408,8 @@ events:
       - "readelf"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -422,8 +421,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/llvm-readelf"
+      - "/home/kaijewl2/emsdk/llvm-readelf"
       - "/usr/lib/ccache/llvm-readelf"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/llvm-readelf"
       - "/usr/local/sbin/llvm-readelf"
       - "/usr/local/bin/llvm-readelf"
       - "/usr/bin/llvm-readelf"
@@ -434,15 +433,15 @@ events:
       - "/bin/llvm-readelf"
       - "/sbin/llvm-readelf"
       - "/home/kaijewl2/emsdk/upstream/emscripten/readelf"
+      - "/home/kaijewl2/emsdk/readelf"
       - "/usr/lib/ccache/readelf"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/readelf"
       - "/usr/local/sbin/readelf"
       - "/usr/local/bin/readelf"
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -450,7 +449,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -478,8 +476,8 @@ events:
       - "dlltool"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -491,8 +489,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/llvm-dlltool"
+      - "/home/kaijewl2/emsdk/llvm-dlltool"
       - "/usr/lib/ccache/llvm-dlltool"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/llvm-dlltool"
       - "/usr/local/sbin/llvm-dlltool"
       - "/usr/local/bin/llvm-dlltool"
       - "/usr/bin/llvm-dlltool"
@@ -503,8 +501,8 @@ events:
       - "/bin/llvm-dlltool"
       - "/sbin/llvm-dlltool"
       - "/home/kaijewl2/emsdk/upstream/emscripten/dlltool"
+      - "/home/kaijewl2/emsdk/dlltool"
       - "/usr/lib/ccache/dlltool"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/dlltool"
       - "/usr/local/sbin/dlltool"
       - "/usr/local/bin/dlltool"
       - "/usr/bin/dlltool"
@@ -517,8 +515,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -526,7 +524,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -554,8 +551,8 @@ events:
       - "addr2line"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -567,8 +564,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/llvm-addr2line"
+      - "/home/kaijewl2/emsdk/llvm-addr2line"
       - "/usr/lib/ccache/llvm-addr2line"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/llvm-addr2line"
       - "/usr/local/sbin/llvm-addr2line"
       - "/usr/local/bin/llvm-addr2line"
       - "/usr/bin/llvm-addr2line"
@@ -579,15 +576,15 @@ events:
       - "/bin/llvm-addr2line"
       - "/sbin/llvm-addr2line"
       - "/home/kaijewl2/emsdk/upstream/emscripten/addr2line"
+      - "/home/kaijewl2/emsdk/addr2line"
       - "/usr/lib/ccache/addr2line"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/addr2line"
       - "/usr/local/sbin/addr2line"
       - "/usr/local/bin/addr2line"
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -595,7 +592,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -622,8 +618,8 @@ events:
       - "tapi"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -635,8 +631,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/tapi"
+      - "/home/kaijewl2/emsdk/tapi"
       - "/usr/lib/ccache/tapi"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/tapi"
       - "/usr/local/sbin/tapi"
       - "/usr/local/bin/tapi"
       - "/usr/bin/tapi"
@@ -649,8 +645,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -658,7 +654,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -692,8 +687,8 @@ events:
       - "clang-scan-deps"
     candidate_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/"
+      - "/home/kaijewl2/emsdk/"
       - "/usr/lib/ccache/"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
@@ -705,8 +700,8 @@ events:
       - "/sbin/"
     searched_directories:
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps-24.0"
+      - "/home/kaijewl2/emsdk/clang-scan-deps-24.0"
       - "/usr/lib/ccache/clang-scan-deps-24.0"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps-24.0"
       - "/usr/local/sbin/clang-scan-deps-24.0"
       - "/usr/local/bin/clang-scan-deps-24.0"
       - "/usr/bin/clang-scan-deps-24.0"
@@ -717,8 +712,8 @@ events:
       - "/bin/clang-scan-deps-24.0"
       - "/sbin/clang-scan-deps-24.0"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps-24"
+      - "/home/kaijewl2/emsdk/clang-scan-deps-24"
       - "/usr/lib/ccache/clang-scan-deps-24"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps-24"
       - "/usr/local/sbin/clang-scan-deps-24"
       - "/usr/local/bin/clang-scan-deps-24"
       - "/usr/bin/clang-scan-deps-24"
@@ -729,8 +724,8 @@ events:
       - "/bin/clang-scan-deps-24"
       - "/sbin/clang-scan-deps-24"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps24"
+      - "/home/kaijewl2/emsdk/clang-scan-deps24"
       - "/usr/lib/ccache/clang-scan-deps24"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps24"
       - "/usr/local/sbin/clang-scan-deps24"
       - "/usr/local/bin/clang-scan-deps24"
       - "/usr/bin/clang-scan-deps24"
@@ -741,8 +736,8 @@ events:
       - "/bin/clang-scan-deps24"
       - "/sbin/clang-scan-deps24"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps"
+      - "/home/kaijewl2/emsdk/clang-scan-deps"
       - "/usr/lib/ccache/clang-scan-deps"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps"
       - "/usr/local/sbin/clang-scan-deps"
       - "/usr/local/bin/clang-scan-deps"
       - "/usr/bin/clang-scan-deps"
@@ -753,8 +748,8 @@ events:
       - "/bin/clang-scan-deps"
       - "/sbin/clang-scan-deps"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps-24.0"
+      - "/home/kaijewl2/emsdk/clang-scan-deps-24.0"
       - "/usr/lib/ccache/clang-scan-deps-24.0"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps-24.0"
       - "/usr/local/sbin/clang-scan-deps-24.0"
       - "/usr/local/bin/clang-scan-deps-24.0"
       - "/usr/bin/clang-scan-deps-24.0"
@@ -765,8 +760,8 @@ events:
       - "/bin/clang-scan-deps-24.0"
       - "/sbin/clang-scan-deps-24.0"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps-24"
+      - "/home/kaijewl2/emsdk/clang-scan-deps-24"
       - "/usr/lib/ccache/clang-scan-deps-24"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps-24"
       - "/usr/local/sbin/clang-scan-deps-24"
       - "/usr/local/bin/clang-scan-deps-24"
       - "/usr/bin/clang-scan-deps-24"
@@ -777,8 +772,8 @@ events:
       - "/bin/clang-scan-deps-24"
       - "/sbin/clang-scan-deps-24"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps24"
+      - "/home/kaijewl2/emsdk/clang-scan-deps24"
       - "/usr/lib/ccache/clang-scan-deps24"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps24"
       - "/usr/local/sbin/clang-scan-deps24"
       - "/usr/local/bin/clang-scan-deps24"
       - "/usr/bin/clang-scan-deps24"
@@ -789,8 +784,8 @@ events:
       - "/bin/clang-scan-deps24"
       - "/sbin/clang-scan-deps24"
       - "/home/kaijewl2/emsdk/upstream/emscripten/clang-scan-deps"
+      - "/home/kaijewl2/emsdk/clang-scan-deps"
       - "/usr/lib/ccache/clang-scan-deps"
-      - "/home/kaijewl2/.local/share/nvim/mason/bin/clang-scan-deps"
       - "/usr/local/sbin/clang-scan-deps"
       - "/usr/local/bin/clang-scan-deps"
       - "/usr/bin/clang-scan-deps"
@@ -803,8 +798,8 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -812,7 +807,6 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
@@ -842,8 +836,8 @@ events:
     found: "/home/kaijewl2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
     search_context:
       ENV{PATH}:
-        - "/usr/lib/ccache"
-        - "/home/kaijewl2/.local/share/nvim/mason/bin"
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
         - "/usr/lib/ccache"
         - "/usr/local/sbin"
         - "/usr/local/bin"
@@ -852,10 +846,51 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
-        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/"
         - "/"
       CMAKE_FIND_ROOT_PATH: "/home/kaijewl2/emsdk/upstream/emscripten/cache/sysroot;/home/kaijewl2/emsdk/upstream/emscripten/cache/sysroot"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Platform/Emscripten.cmake:6 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
+      - "CMakeLists.txt:1 (project)"
+    mode: "file"
+    variable: "_EMSCRIPTEN_PLATFORM_MODULE"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Platform/Emscripten.cmake"
+    candidate_directories:
+      - "/home/kaijewl2/emsdk/upstream/emscripten/cmake/Modules/"
+    found: "/home/kaijewl2/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/kaijewl2/emsdk"
+        - "/home/kaijewl2/emsdk/upstream/emscripten"
+        - "/usr/lib/ccache"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/kaijewl2/projects/far_star/ardupilot/Tools/autotest"
+      CMAKE_INSTALL_PREFIX: "/home/kaijewl2/emsdk/upstream/emscripten/cache/sysroot"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/"
+      CMAKE_FIND_ROOT_PATH: "/home/kaijewl2/emsdk/upstream/emscripten/cache/sysroot"
 ...

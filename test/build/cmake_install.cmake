@@ -1,4 +1,4 @@
-# Install script for directory: /home/kaijewl2/projects/far_star/code/test/build
+# Install script for directory: /home/kaijewl2/projects/far_star/code/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

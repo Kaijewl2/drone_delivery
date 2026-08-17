@@ -4,9 +4,16 @@ FAR STAR ULTIMATE PLAN
 PRESSING MATTERS
 ----------------------
 / | connect JS to C++ script
-O | send coords from UI to C++ script 
+/ | send coords from UI to C++ script 
 O | working autonomous mission creation, started from webpage
 
 later
 ----------------------
 O shorten run command
+
+
+notes
+---------------------
+map api fails eternally when invalid coords given
+
+coords flipped somewhere. why is there no standard 'lat, lng' or 'lng, lat'

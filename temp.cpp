@@ -1,11 +1,10 @@
-#include <cstring>
 #include <iostream>
 
 class Coordinates {
 public:
   Coordinates() { std::cout << "Coordinates obj"; }
-  float latitude = 67.0198;
-  float longitude = 21.282;
+  float latitude = -75.189;
+  float longitude = 40.686;
 
   float get_latitude() { return latitude; };
   float get_longitude() { return longitude; };

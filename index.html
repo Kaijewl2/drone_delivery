@@ -33,16 +33,17 @@
       <input type="number" id="lon" name="lon" value="40.686" />
     </div>
 
-    <!--cause for alteration-->
-    <button id="submit" onclick="window.location.reload()">go</button>
+    <button id="submit" onclick="update_location()">go</button>
   </div>
-  <!--DERIVE HTML COORDS FROM C++ CLASS-->
 
   <script>
-    var lat = document.getElementById("lat").value;
-    var lon = document.getElementById("lon").value;
+    var lat = document.getElementById("lat").valueAsNumber;
+    var lon = document.getElementById("lon").valueAsNumber;
     var coordinates = new Module.Coordinates();
     var pilot = new Module.Pilot();
+
+    coordinates.set_destination(lat, lon);
+
 
     const coords = document.getElementById("coords");
 
@@ -51,7 +52,7 @@
 
     var map = new maplibregl.Map({
       style: 'https://tiles.openfreemap.org/styles/liberty',
-      center: [lat, lon],
+      center: [coordinates.get_latitude(), coordinates.get_longitude()],
       zoom: 9.5,
       container: 'map',
       style: {
@@ -114,21 +115,30 @@
     let marker = new maplibregl.Marker({draggable: true})
       .setLngLat([lat, lon])
       .addTo(map);
-
+    // Coords flipped somewhere
     function onDragEnd() {
       lng_lat = marker.getLngLat();
+      coordinates.set_destination(lng_lat.lat, lng_lat.lng);
       coords.style.display = 'block';
       coords.innerHTML =
-        `Longitude: ${lng_lat.lng}<br/>Latitude: ${lng_lat.lat}`;
+        `Longitude: ${coordinates.get_longitude()}<br/>Latitude: ${coordinates.get_latitude()}`;
     }
 
     marker.on('dragend', onDragEnd);
 
     function update_location() {
-      lat = document.getElementById("lat").value;
-      lon = document.getElementById("lon").value;
+      lat = document.getElementById("lat").valueAsNumber;
+      lng = document.getElementById("lon").valueAsNumber;
 
-      map.center = [lat, lon];
+      coordinates.set_destination(lat, lng);
+      coords.style.display = 'block';
+      coords.innerHTML =
+        `Longitude: ${coordinates.get_longitude()}<br/>Latitude: ${coordinates.get_latitude()}`;
+
+
+      map.center = [coordinates.get_latitude(), coordinates.get_longitude()];
+      map.resize();
+      window.location.reload()
       console.log("latitude- ", lat);
       console.log("longitude-", lon);
     }

@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>drone delivery</title>
   <script src="temp.js"></script>
-  <script src="main.js"></script>
   <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
   <link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet" />
 </head>
@@ -37,16 +36,18 @@
     <!--cause for alteration-->
     <button id="submit" onclick="window.location.reload()">go</button>
   </div>
-
+  <!--DERIVE HTML COORDS FROM C++ CLASS-->
 
   <script>
     var lat = document.getElementById("lat").value;
     var lon = document.getElementById("lon").value;
+    var coordinates = new Module.Coordinates();
+    var pilot = new Module.Pilot();
 
     const coords = document.getElementById("coords");
 
     coords.innerHTML =
-      `Longitude: ${lon}<br/>Latitude: ${lat}`;
+      `Longitude: ${coordinates.get_longitude()}<br/>Latitude: ${coordinates.get_latitude()}`;
 
     var map = new maplibregl.Map({
       style: 'https://tiles.openfreemap.org/styles/liberty',
@@ -131,6 +132,7 @@
       console.log("latitude- ", lat);
       console.log("longitude-", lon);
     }
+
   </script>
 
 </body>

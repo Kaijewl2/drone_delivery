@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/TOL_test.dir/link.d CMakeFiles/TOL_test.dir/takeoff_and_land.cpp.o -o TOL_test  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmavsdk.so.3.15.0 -ldl

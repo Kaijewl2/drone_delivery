@@ -1,2 +1,0 @@
-/home/kaijewl2/projects/far_star/code/test/build/CMakeFiles/edit_cache.dir
-/home/kaijewl2/projects/far_star/code/test/build/CMakeFiles/rebuild_cache.dir

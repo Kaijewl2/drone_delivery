@@ -3,8 +3,8 @@
 class Coordinates {
 public:
   Coordinates() { std::cout << "Coordinates obj"; }
-  float latitude = -75.189;
-  float longitude = 40.686;
+  float latitude = 40.686;
+  float longitude = -75.189;
 
   float get_latitude() { return latitude; };
   float get_longitude() { return longitude; };
@@ -23,7 +23,8 @@ public:
   Missions() { std::cout << "Missions obj" << std::endl; }
 
   void go_to_location(float latitude, float longitude) {
-    std::cout << "go_to_location" << std::endl;
+    std::cout << "traveling to coordinates Lat: " << latitude
+              << " , Lng: " << longitude << std::endl;
   };
 };
 
@@ -40,13 +41,9 @@ public:
     coords.set_destination(lat, lng);
   };
 
-  void start_mission(std::string mission_name) {
-    if (mission_name == "go_to_location") {
-      missions.go_to_location(coords.latitude, coords.longitude);
-    } else {
-      std::cout << "not a mission\n";
-    }
-  };
+  void go_to_location(float lat, float lng) {
+    missions.go_to_location(lat, lng);
+  }
 
 private:
   Coordinates coords;
@@ -79,5 +76,5 @@ EMSCRIPTEN_BINDINGS(jsgoodbye) {
       .function("set_latitude", &Pilot::set_latitude)
       .function("set_longitude", &Pilot::set_longitude)
       .function("set_destination", &Pilot::set_destination)
-      .function("start_mission", &Pilot::start_mission);
+      .function("go_to_location", &Pilot::go_to_location);
 }

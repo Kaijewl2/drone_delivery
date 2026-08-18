@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--Coordinate system is not standarized; passing lat and lng everywhere; going to fix later-->
 
 <head>
   <meta charset="UTF-8">
@@ -21,29 +22,30 @@
   <div id="destination">
     <div>
       <br>
-      <label for="lat">latitude</label>
+      <label for="lat">Longitude</label>
       <br>
       <input type="number" id="lat" name="latitude" value="-75.189" />
     </div>
 
     <div>
       <br>
-      <label for="lon">longitude</label>
+      <label for="lon">Latitude</label>
       <br>
       <input type="number" id="lon" name="lon" value="40.686" />
     </div>
 
-    <button id="submit" onclick="update_location()">go</button>
+    <button id="submit" onclick="update_location()">change map coordinates</button>
+  </div><br /><br />
+
+  <div id="mission_selection">
+    <button id="go_to_location" onclick="start_go_to_location()">go to location</button>
   </div>
 
   <script>
-    var lat = document.getElementById("lat").valueAsNumber;
-    var lon = document.getElementById("lon").valueAsNumber;
+    var lat = document.getElementById("lat").value;
+    var lon = document.getElementById("lon").value;
     var coordinates = new Module.Coordinates();
     var pilot = new Module.Pilot();
-
-    coordinates.set_destination(lat, lon);
-
 
     const coords = document.getElementById("coords");
 
@@ -52,7 +54,7 @@
 
     var map = new maplibregl.Map({
       style: 'https://tiles.openfreemap.org/styles/liberty',
-      center: [coordinates.get_latitude(), coordinates.get_longitude()],
+      center: [lat, lon],
       zoom: 9.5,
       container: 'map',
       style: {
@@ -133,14 +135,17 @@
       coordinates.set_destination(lat, lng);
       coords.style.display = 'block';
       coords.innerHTML =
-        `Longitude: ${coordinates.get_longitude()}<br/>Latitude: ${coordinates.get_latitude()}`;
+        `Latitude: ${coordinates.get_longitude()}<br/>Latitude: ${coordinates.get_latitude()}`;
 
 
       map.center = [coordinates.get_latitude(), coordinates.get_longitude()];
-      map.resize();
-      window.location.reload()
+      window.location.reload();
       console.log("latitude- ", lat);
       console.log("longitude-", lon);
+    }
+
+    function start_go_to_location() {
+      pilot.go_to_location(coordinates.get_latitude(), coordinates.get_longitude());
     }
 
   </script>

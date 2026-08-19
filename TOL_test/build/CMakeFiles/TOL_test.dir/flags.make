@@ -6,5 +6,5 @@ CXX_DEFINES = -DMAVSDK_SHARED
 
 CXX_INCLUDES = -isystem /usr/local/include/mavsdk
 
-CXX_FLAGS = -std=gnu++20   -Wall -Wextra -Werror
+CXX_FLAGS = -std=gnu++20
 

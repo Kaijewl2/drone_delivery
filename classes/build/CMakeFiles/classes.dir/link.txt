@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/classes.dir/link.d CMakeFiles/classes.dir/classes.cpp.o -o classes  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmavsdk.so.3.15.0 -ldl

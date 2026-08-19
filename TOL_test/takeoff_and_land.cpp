@@ -29,13 +29,14 @@ void usage(const std::string &bin_name) {
 }
 
 int main(int argc, char **argv) {
-  if (argc != 2) {
+  /*if (argc != 2) {
     usage(argv[0]);
     return 1;
-  }
+  }*/
 
   Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
-  ConnectionResult connection_result = mavsdk.add_any_connection(argv[1]);
+  ConnectionResult connection_result =
+      mavsdk.add_any_connection("udpin://127.0.0.1:14552");
 
   if (connection_result != ConnectionResult::Success) {
     std::cerr << "Connection failed: " << connection_result << '\n';

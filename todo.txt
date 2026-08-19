@@ -5,11 +5,14 @@ PRESSING MATTERS
 ----------------------
 / | connect JS to C++ script
 / | send coords from UI to C++ script 
+/ | working MAVSDK example in project
+O | MAVSDK logic in Missions' class function
 O | working autonomous mission creation, started from webpage
 
 later
 ----------------------
 O shorten run command
+O learn how black magic of cmake works
 
 
 notes
@@ -17,3 +20,16 @@ notes
 map api fails eternally when invalid coords given
 
 coords flipped somewhere. why is there no standard 'lat, lng' or 'lng, lat'
+
+08/19
+Emscripten says dynamic libs are supported; lets test this assumption
+
+Should I really be calling drone scripts from web? Emscripten has to create its own lib for logic. That site that calls complex scripts directly from itself will be really slow. If not then what?
+
+Could, instead of direct mission call from web, have site make request for local machine to run mission script
+  How will process of requesting mission script to run, from web, work?
+    API
+
+Create Node.js backend that will call local mission script. Use fetch() in web logic to call this backend. boom
+
+Rumor has it we are able to run autonomous drone missions from the browser

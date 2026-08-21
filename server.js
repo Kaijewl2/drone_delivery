@@ -20,13 +20,24 @@ const go_to_location_script_path = './go_to_location/build/go_to_location';
 
 app.use(cors({origin: 'http://127.0.0.1:5500'}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/api/go_to_location', (req, res) => {
+  const message = req.body;
+  console.log(message);
+  res.json({
+        id: 42,
+        name: "Tony Bark",
+        role: "Genius, philanthropist, billionaire, playboy, not a painter"
+    });
+})
 
 app.get('/api/go_to_location', (req, res) => {
-
+/*
   const {lat, lng} = req.body;
 
   console.log(`got ${lat} , ${lng}`);
-
+*/
   // All logic in get(..) callback func runs when request made to path
   execFile(go_to_location_script_path, ['34.6767', '12.0139'], (error, stdout, stderr) => {
      if (error) {

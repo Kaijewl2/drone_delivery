@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  std::cout << "Coords: " << argv[1] << " , " << argv[2];
+  std::cout << "Coords: " << argv[1] << " , " << argv[2] << "\n";
 
   Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
   ConnectionResult connection_result =

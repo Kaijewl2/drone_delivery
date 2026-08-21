@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/takeoff_and_land.dir/link.d CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o -o takeoff_and_land  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmavsdk.so.3.15.0 -ldl

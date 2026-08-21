@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/takeoff_and_land.cpp" "CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o" "gcc" "CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o.d"
-  "" "takeoff_and_land" "gcc" "CMakeFiles/takeoff_and_land.dir/link.d"
+  "/home/kaijewl2/projects/far_star/drone_delivery/go_to_location/go_to_location.cpp" "CMakeFiles/go_to_location.dir/go_to_location.cpp.o" "gcc" "CMakeFiles/go_to_location.dir/go_to_location.cpp.o.d"
+  "" "go_to_location" "gcc" "CMakeFiles/go_to_location.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

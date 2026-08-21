@@ -1,5 +1,5 @@
-CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o: \
- /home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/takeoff_and_land.cpp \
+CMakeFiles/go_to_location.dir/go_to_location.cpp.o: \
+ /home/kaijewl2/projects/far_star/drone_delivery/go_to_location/go_to_location.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/16/chrono \
  /usr/include/c++/16/bits/version.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -182,18 +182,26 @@ CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o: \
  /usr/include/c++/16/bits/formatfwd.h \
  /usr/include/c++/16/bits/ranges_algobase.h \
  /usr/include/c++/16/bits/unicode.h \
- /usr/include/c++/16/bits/unicode-data.h \
+ /usr/include/c++/16/bits/unicode-data.h /usr/include/c++/16/future \
+ /usr/include/c++/16/mutex /usr/include/c++/16/bits/std_mutex.h \
+ /usr/include/c++/16/bits/unique_lock.h \
+ /usr/include/c++/16/condition_variable /usr/include/c++/16/stop_token \
+ /usr/include/c++/16/atomic /usr/include/c++/16/bits/atomic_base.h \
+ /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/16/bits/atomic_wait.h \
+ /usr/include/c++/16/bits/std_thread.h /usr/include/c++/16/semaphore \
+ /usr/include/c++/16/bits/semaphore_base.h \
+ /usr/include/c++/16/bits/atomic_timed_wait.h \
+ /usr/include/c++/16/bits/this_thread_sleep.h /usr/include/sys/time.h \
+ /usr/include/c++/16/bits/atomic_futex.h \
+ /usr/include/c++/16/bits/std_function.h /usr/include/c++/16/iostream \
  /usr/local/include/mavsdk/mavsdk.hpp /usr/include/c++/16/memory \
  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
  /usr/include/c++/16/bits/shared_ptr_atomic.h \
- /usr/include/c++/16/bits/atomic_base.h \
- /usr/include/c++/16/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16/bits/atomic_wait.h \
  /usr/include/c++/16/backward/auto_ptr.h \
  /usr/include/c++/16/bits/ranges_uninitialized.h \
  /usr/include/c++/16/pstl/glue_memory_defs.h \
  /usr/include/c++/16/pstl/execution_defs.h /usr/include/c++/16/functional \
- /usr/include/c++/16/bits/std_function.h \
  /usr/include/c++/16/unordered_map \
  /usr/include/c++/16/bits/unordered_map.h \
  /usr/include/c++/16/bits/hashtable.h \
@@ -578,12 +586,4 @@ CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o: \
  /usr/include/c++/16/bits/intcmp.h \
  /usr/local/include/mavsdk/plugin_base.hpp \
  /usr/local/include/mavsdk/plugins/telemetry/telemetry.hpp \
- /usr/include/c++/16/iostream /usr/include/c++/16/future \
- /usr/include/c++/16/mutex /usr/include/c++/16/bits/std_mutex.h \
- /usr/include/c++/16/bits/unique_lock.h \
- /usr/include/c++/16/condition_variable /usr/include/c++/16/stop_token \
- /usr/include/c++/16/atomic /usr/include/c++/16/bits/std_thread.h \
- /usr/include/c++/16/semaphore /usr/include/c++/16/bits/semaphore_base.h \
- /usr/include/c++/16/bits/atomic_timed_wait.h \
- /usr/include/c++/16/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/c++/16/bits/atomic_futex.h /usr/include/c++/16/thread
+ /usr/include/c++/16/thread

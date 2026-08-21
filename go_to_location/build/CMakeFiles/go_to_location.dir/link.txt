@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/go_to_location.dir/link.d CMakeFiles/go_to_location.dir/go_to_location.cpp.o -o go_to_location  -Wl,-rpath,/usr/local/lib /usr/local/lib/libmavsdk.so.3.15.0 -ldl

@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

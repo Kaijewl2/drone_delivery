@@ -7,7 +7,9 @@ PRESSING MATTERS
 / | send coords from UI to C++ script 
 / | working MAVSDK example in project
 / | working autonomous mission creation, started from webpage
-O | drone script to interact with drone hardware
+/ | drone script to interact with drone hardware
+O | Coord mission
+O | Winch functionality
 
 later
 ----------------------

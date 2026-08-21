@@ -1,3 +1,0 @@
-/home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build/CMakeFiles/takeoff_and_land.dir
-/home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build/CMakeFiles/edit_cache.dir
-/home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build/CMakeFiles/rebuild_cache.dir

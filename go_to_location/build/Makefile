@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land
+CMAKE_SOURCE_DIR = /home/kaijewl2/projects/far_star/drone_delivery/go_to_location
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build
+CMAKE_BINARY_DIR = /home/kaijewl2/projects/far_star/drone_delivery/go_to_location/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build/CMakeFiles /home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kaijewl2/projects/far_star/drone_delivery/go_to_location/build/CMakeFiles /home/kaijewl2/projects/far_star/drone_delivery/go_to_location/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kaijewl2/projects/far_star/drone_delivery/go_to_location/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named takeoff_and_land
+# Target rules for targets named go_to_location
 
 # Build rule for target.
-takeoff_and_land: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 takeoff_and_land
-.PHONY : takeoff_and_land
+go_to_location: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 go_to_location
+.PHONY : go_to_location
 
 # fast build rule for target.
-takeoff_and_land/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/takeoff_and_land.dir/build.make CMakeFiles/takeoff_and_land.dir/build
-.PHONY : takeoff_and_land/fast
+go_to_location/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_to_location.dir/build.make CMakeFiles/go_to_location.dir/build
+.PHONY : go_to_location/fast
 
-takeoff_and_land.o: takeoff_and_land.cpp.o
-.PHONY : takeoff_and_land.o
+go_to_location.o: go_to_location.cpp.o
+.PHONY : go_to_location.o
 
 # target to build an object file
-takeoff_and_land.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/takeoff_and_land.dir/build.make CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o
-.PHONY : takeoff_and_land.cpp.o
+go_to_location.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_to_location.dir/build.make CMakeFiles/go_to_location.dir/go_to_location.cpp.o
+.PHONY : go_to_location.cpp.o
 
-takeoff_and_land.i: takeoff_and_land.cpp.i
-.PHONY : takeoff_and_land.i
+go_to_location.i: go_to_location.cpp.i
+.PHONY : go_to_location.i
 
 # target to preprocess a source file
-takeoff_and_land.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/takeoff_and_land.dir/build.make CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.i
-.PHONY : takeoff_and_land.cpp.i
+go_to_location.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_to_location.dir/build.make CMakeFiles/go_to_location.dir/go_to_location.cpp.i
+.PHONY : go_to_location.cpp.i
 
-takeoff_and_land.s: takeoff_and_land.cpp.s
-.PHONY : takeoff_and_land.s
+go_to_location.s: go_to_location.cpp.s
+.PHONY : go_to_location.s
 
 # target to generate assembly for a file
-takeoff_and_land.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/takeoff_and_land.dir/build.make CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.s
-.PHONY : takeoff_and_land.cpp.s
+go_to_location.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_to_location.dir/build.make CMakeFiles/go_to_location.dir/go_to_location.cpp.s
+.PHONY : go_to_location.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... takeoff_and_land"
-	@echo "... takeoff_and_land.o"
-	@echo "... takeoff_and_land.i"
-	@echo "... takeoff_and_land.s"
+	@echo "... go_to_location"
+	@echo "... go_to_location.o"
+	@echo "... go_to_location.i"
+	@echo "... go_to_location.s"
 .PHONY : help
 
 

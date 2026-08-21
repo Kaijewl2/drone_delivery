@@ -1,8 +1,8 @@
-takeoff_and_land: \
+go_to_location: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
-  CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o \
+  CMakeFiles/go_to_location.dir/go_to_location.cpp.o \
   /usr/local/lib/libmavsdk.so.3.15.0 \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/libdl.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libstdc++.so \
@@ -62,7 +62,7 @@ takeoff_and_land: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
 
-CMakeFiles/takeoff_and_land.dir/takeoff_and_land.cpp.o:
+CMakeFiles/go_to_location.dir/go_to_location.cpp.o:
 
 /usr/local/lib/libmavsdk.so.3.15.0:
 

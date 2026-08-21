@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/kaijewl2/MAVSDK/cpp/examples/takeoff_and_land/CMakeLists.txt"
+  "/home/kaijewl2/projects/far_star/drone_delivery/go_to_location/CMakeLists.txt"
   "CMakeFiles/4.4.0/CMakeCCompiler.cmake"
   "CMakeFiles/4.4.0/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.4.0/CMakeSystem.cmake"
@@ -59,5 +59,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/takeoff_and_land.dir/DependInfo.cmake"
+  "CMakeFiles/go_to_location.dir/DependInfo.cmake"
   )

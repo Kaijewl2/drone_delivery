@@ -6,8 +6,8 @@ PRESSING MATTERS
 / | connect JS to C++ script
 / | send coords from UI to C++ script 
 / | working MAVSDK example in project
-O | MAVSDK logic in Missions' class function
-O | working autonomous mission creation, started from webpage
+/ | working autonomous mission creation, started from webpage
+O | drone script to interact with drone hardware
 
 later
 ----------------------
@@ -33,3 +33,12 @@ Could, instead of direct mission call from web, have site make request for local
 Create Node.js backend that will call local mission script. Use fetch() in web logic to call this backend. boom
 
 Rumor has it we are able to run autonomous drone missions from the browser
+
+08/20
+sim_vehicle.py connects to mavproxy. Could connect directly to mavproxy myself, but ardupilot scripts already do that. Going to see if any of their scripts just connect to mavproxy and sit and look pretty. If not I SUPPOSE I'll start congregating with mavproxy.
+
+Lot of riff raff coming from ardupilot's scripts. Fine, I'll do it myself
+
+Was able to read motors arming from ardupilot sim_vehicle.py script by removing UDP port 14550, and adding 14551 which was connected to Mission Planner. MP armed motors and MAVProxy read that they were armed. I thought I understood the connection process between MAV & drone, but I was greatly mistaken. Will work more with MAVProxy to get this damn drone delivering Taco Bell
+
+Achieved connection between RC Radio; Mission Planner; and MAVProxy, started by sim_vehicle.py script. Flight data was conflicted between SITL drone and actual, so GUI in MP was showing drone in two different locations, both of which were correct. My assumption that MAVProxy needed a port for each socket connection was wrong. UDP has no master; it takes a port over and lets anyone who want to come through do so. I can just run all communications on 14550, because that's what backpack wifi defaults to.

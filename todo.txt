@@ -13,7 +13,7 @@ O | Winch functionality
 
 later
 ----------------------
-O shorten run command
+O script to start all commands in one call (script, backend, livepreview)
 O learn how black magic of cmake works
 
 

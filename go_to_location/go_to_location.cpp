@@ -6,6 +6,7 @@
 #include <mavsdk/plugins/action/action.hpp>
 #include <mavsdk/plugins/telemetry/telemetry.hpp>
 #include <memory>
+#include <string>
 #include <thread>
 
 using namespace mavsdk;
@@ -22,7 +23,9 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  std::cout << "Coords: " << argv[1] << " , " << argv[2] << "\n";
+  float latitude = std::stof(argv[1]);
+  std::cout << typeid(latitude).name() << " and is " << latitude << std::endl;
+  std::cout << "Coords: " << argv[1] << " , " << argv[2] << std::endl;
 
   Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
   ConnectionResult connection_result =

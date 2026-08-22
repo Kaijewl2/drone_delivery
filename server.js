@@ -20,24 +20,35 @@ const go_to_location_script_path = './go_to_location/build/go_to_location';
 
 app.use(cors({origin: 'http://127.0.0.1:5500'}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
+// Post handling endpoint
 app.post('/api/go_to_location', (req, res) => {
-  const message = req.body;
-  console.log(message);
+  const latitude = req.body.latitude.toString();
+  const longitude = req.body.longitude.toString();
+  console.log(`starting go_to_location script with coordinates Lat: ${latitude} , Lng: ${longitude}`);
+
+  execFile(go_to_location_script_path, [latitude, longitude], (error, stdout, stderr) => {
+     if (error) {
+        console.error(`Execution Error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.error(`Standard Error: ${stderr}`);
+        return;
+    }
+    console.log(`Script Output:\n${stdout}`);
+  })
+
+
   res.json({
-        id: 42,
-        name: "Tony Bark",
-        role: "Genius, philanthropist, billionaire, playboy, not a painter"
+        status: "success",
+        name: "Duncan Idaho",
+        role: "pad footed seeli fit only for slinging slig shit"
     });
 })
 
+// Get handling endpoint
 app.get('/api/go_to_location', (req, res) => {
-/*
-  const {lat, lng} = req.body;
-
-  console.log(`got ${lat} , ${lng}`);
-*/
   // All logic in get(..) callback func runs when request made to path
   execFile(go_to_location_script_path, ['34.6767', '12.0139'], (error, stdout, stderr) => {
      if (error) {

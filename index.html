@@ -38,7 +38,7 @@
   </div><br /><br />
 
   <div id="mission_selection">
-    <button id="go_to_location" onclick="send_data()">go to location</button>
+    <button id="go_to_location" onclick="send_coord_data()">go to location</button>
   </div>
 
   <script>
@@ -148,14 +148,20 @@
       pilot.go_to_location(coordinates.get_latitude(), coordinates.get_longitude());
     }
 
-    async function send_data() {
+    async function send_coord_data() {
+      // Endpoint requesting from
       const url = "http://127.0.0.1:3000/api/go_to_location";
+
+      const coords_json = {
+        latitude: coordinates.get_latitude(),
+        longitude: coordinates.get_longitude()
+      };
 
       try {
         const response = await fetch(url, {
           method: "POST",
           headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({key: 'value'})
+          body: JSON.stringify(coords_json)
         });
 
         const result = await response.json();
@@ -165,23 +171,13 @@
       }
     }
 
-
     // Backend request
     async function get_data() {
-      /*const coord_data = {
-        latitude: coordinates.get_latitude(),
-        longitude: coordinates.get_longitude()
-      }*/
 
+      // Endpoint requesting from
       const url = "http://127.0.0.1:3000/api/go_to_location";
       try {
-        const response = await fetch(url /*{
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(coord_data)
-        }*/);
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }

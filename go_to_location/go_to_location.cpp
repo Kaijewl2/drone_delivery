@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
   // Convert coord args to float
   double latitude = std::stod(argv[1]);
   double longitude = std::stod(argv[2]);
-  float altitude = 100;
+  float takeoff_altitude = 100;
 
   std::cout << "Coords: " << argv[1] << " , " << argv[2] << std::endl;
 
@@ -76,6 +76,14 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  std::cout << "Setting takeoff alt set to: " << takeoff_altitude;
+  const Action::Result set_takeoff_altitude_result =
+      action.set_takeoff_altitude(takeoff_altitude);
+  if (set_takeoff_altitude_result != Action::Result::Success) {
+    std::cerr << "set_takeoff_altitude(float) failed: "
+              << set_takeoff_altitude_result << std::endl;
+    return 1;
+  }
   // Take off
   std::cout << "Taking off...\n";
   const Action::Result takeoff_result = action.takeoff();
@@ -84,12 +92,17 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  while (telemetry.position().relative_altitude_m < takeoff_altitude) {
+    std::cout << "altitude: " << telemetry.position().relative_altitude_m
+              << std::endl;
+    sleep_for(seconds(1));
+  }
   // Let hover
-  sleep_for(seconds(5));
+  // sleep_for(seconds(20));
 
   std::cout << "Going to " << argv[1] << " , " << argv[2] << std::endl;
   const Action::Result go_to_result =
-      action.goto_location(latitude, longitude, altitude, 25);
+      action.goto_location(latitude, longitude, takeoff_altitude, 25);
   if (go_to_result != Action::Result::Success) {
     std::cerr << "Go to failed: " << go_to_result << std::endl;
     return 1;

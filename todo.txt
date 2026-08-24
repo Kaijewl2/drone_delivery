@@ -8,13 +8,14 @@ PRESSING MATTERS
 / | working MAVSDK example in project
 / | working autonomous mission creation, started from webpage
 / | drone script to interact with drone hardware
-O | Coord mission
+/ | Coord mission
 O | Winch functionality
 
 later
 ----------------------
 O script to start all commands in one call (script, backend, livepreview)
 O learn how black magic of cmake works
+O figure out why need while check for drone to lift to takeoff_alt
 
 
 notes

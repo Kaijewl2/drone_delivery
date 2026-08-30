@@ -50,7 +50,7 @@
 /*****Includes*****/
 #include <Arduino.h>
 #include <Servo.h> // includes the standard Arduino servo library for control of the motor (needed to allow the Arduino to disable the motor when the limit switch is triggered - otherwise, the PWM signal could be used straight from the autopilot).
-#include <mavlink.h> // includes the MAVLink library as specified here:  https://github.com/mavlink/c_library_v2
+#include <ardupilotmega/mavlink.h> // includes the MAVLink library as specified here:  https: //github.com/mavlink/c_library_v2
 
 /******************************CONSTANTS******************************/
 
@@ -109,81 +109,6 @@ unsigned long int lastWinchStatus =
 
 // Winch motor variable
 Servo winchMotor; // The winch's motor (a continuous servo for the CLARK-3).
-
-/******************************INITIAL SETUP******************************/
-/* This code only runs at the beginning of code execution and configures
- * peripherals for the controller.
- */
-void setup() {
-  Serial.begin(
-      BRATE); // Sets serial the communication baud rate between the winch and
-              // the autopilot - this needs to be set the same on the autopilot!
-              // For example, Telem2 on the Pixhawk 2 is mapped to Serial2 and
-              // should be adjusted to 115.
-  attachInterrupt(
-      digitalPinToInterrupt(HALL_EFFECT_PIN), hallEffectTriggered,
-      FALLING); // assigns an interrupt routine to the hall effect sensor
-  pinMode(
-      PWM_PIN,
-      INPUT); // Sets the PWM_PIN to input in order to determine PWM high time.
-  winchMotor.attach(SERVO_PWM_PIN);
-  pinMode(LED_BUILTIN, OUTPUT); // Allows the built in LED in the Arduino to be
-                                // used for debugging purposes.
-  digitalWrite(LED_BUILTIN,
-               LOW); // Ensures that the built in LED is initially off.
-}
-
-/******************************MAIN LOOP******************************/
-/* The loop sends a heartbeat every second and winch status messages
- * at a defined rate.
- */
-void loop() {
-
-  // Heartbeats are sent every second (1000ms).
-  if ((millis() - lastHeartbeat) >
-      1000) {                 // Check to see if it is time to send a heartbeat.
-    sendHeartbeat();          // Send a heartbeat.
-    lastHeartbeat = millis(); // Keep track of last heartbeat time.
-  }
-
-  // Winch Status messages are sent every DATA_FREQ ms
-  if ((millis() - lastWinchStatus) >
-      (DATA_FREQ)) { // The lineOut is sent every DATA_FREQ ms.
-    sendWinchStatus(
-        rotationCount *
-        SPOOL_CIRCUMFERENCE); // Send the winch status with the line out value
-                              // detemined by the number of rotations and the
-                              // winch spool circumference
-    lastWinchStatus =
-        millis(); // Keep track of the last winch status message time.
-  }
-
-  // Set the PWM to drive the winch motor
-  pulseDuration = pulseIn(
-      PWM_PIN, HIGH); // Determine the PWM pulse width from the autopilot.
-  if (pulseDuration >
-      POSITIVE_PWM) { // If the pulse width meets the positive criterion defined
-                      // by POSITIVE_PWM then output a clockwise PWM.
-    winchMotor.write(20);
-  } else if ((pulseDuration < NEGATIVE_PWM) &&
-             (!digitalRead(
-                 SWITCH_PIN))) { // If the pulse width meets the negative
-                                 // criterion defined by NEGATIVE_PWM and the
-                                 // limit switch is not activated then output a
-                                 // counter-clockwise PWM.
-    winchMotor.write(160);
-  } else { // If neither criterion for motion is met, then set the winch motor
-           // to have no motion.
-    winchMotor.write(90);
-  }
-
-  // Checks whether or not the hall effect sensor has registered a count (via
-  // the hallEffectTriggered ISR)
-  if (detected) {
-    countRotation(); // Updates the rotation count depending on the direction
-                     // the winch is spooling.
-  }
-}
 
 /******************************SEND HEARTBEAT******************************/
 /* This code provides a heartbeat signal to the autopilot.
@@ -289,3 +214,78 @@ void countRotation() {
  * which is checked in the main loop countRotation call.
  */
 void hallEffectTriggered() { detected = HIGH; }
+
+/******************************INITIAL SETUP******************************/
+/* This code only runs at the beginning of code execution and configures
+ * peripherals for the controller.
+ */
+void setup() {
+  Serial.begin(
+      BRATE); // Sets serial the communication baud rate between the winch and
+              // the autopilot - this needs to be set the same on the autopilot!
+              // For example, Telem2 on the Pixhawk 2 is mapped to Serial2 and
+              // should be adjusted to 115.
+  attachInterrupt(
+      digitalPinToInterrupt(HALL_EFFECT_PIN), hallEffectTriggered,
+      FALLING); // assigns an interrupt routine to the hall effect sensor
+  pinMode(
+      PWM_PIN,
+      INPUT); // Sets the PWM_PIN to input in order to determine PWM high time.
+  winchMotor.attach(SERVO_PWM_PIN);
+  pinMode(LED_BUILTIN, OUTPUT); // Allows the built in LED in the Arduino to be
+                                // used for debugging purposes.
+  digitalWrite(LED_BUILTIN,
+               LOW); // Ensures that the built in LED is initially off.
+}
+
+/******************************MAIN LOOP******************************/
+/* The loop sends a heartbeat every second and winch status messages
+ * at a defined rate.
+ */
+void loop() {
+
+  // Heartbeats are sent every second (1000ms).
+  if ((millis() - lastHeartbeat) >
+      1000) {                 // Check to see if it is time to send a heartbeat.
+    sendHeartbeat();          // Send a heartbeat.
+    lastHeartbeat = millis(); // Keep track of last heartbeat time.
+  }
+
+  // Winch Status messages are sent every DATA_FREQ ms
+  if ((millis() - lastWinchStatus) >
+      (DATA_FREQ)) { // The lineOut is sent every DATA_FREQ ms.
+    sendWinchStatus(
+        rotationCount *
+        SPOOL_CIRCUMFERENCE); // Send the winch status with the line out value
+                              // detemined by the number of rotations and the
+                              // winch spool circumference
+    lastWinchStatus =
+        millis(); // Keep track of the last winch status message time.
+  }
+
+  // Set the PWM to drive the winch motor
+  pulseDuration = pulseIn(
+      PWM_PIN, HIGH); // Determine the PWM pulse width from the autopilot.
+  if (pulseDuration >
+      POSITIVE_PWM) { // If the pulse width meets the positive criterion defined
+                      // by POSITIVE_PWM then output a clockwise PWM.
+    winchMotor.write(20);
+  } else if ((pulseDuration < NEGATIVE_PWM) &&
+             (!digitalRead(
+                 SWITCH_PIN))) { // If the pulse width meets the negative
+                                 // criterion defined by NEGATIVE_PWM and the
+                                 // limit switch is not activated then output a
+                                 // counter-clockwise PWM.
+    winchMotor.write(160);
+  } else { // If neither criterion for motion is met, then set the winch motor
+           // to have no motion.
+    winchMotor.write(90);
+  }
+
+  // Checks whether or not the hall effect sensor has registered a count (via
+  // the hallEffectTriggered ISR)
+  if (detected) {
+    countRotation(); // Updates the rotation count depending on the direction
+                     // the winch is spooling.
+  }
+}

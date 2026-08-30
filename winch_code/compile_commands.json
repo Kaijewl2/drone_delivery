@@ -216,7 +216,7 @@
         "output": ".pio/build/uno/lib55d/Servo/zephyr/Servo.cpp.o"
     },
     {
-        "command": "/home/kaijewl2/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/clark3.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc \"-I.pio/libdeps/uno/MAVLink v2 C library\" -I.pio/libdeps/uno/Servo/src -I/home/kaijewl2/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/kaijewl2/.platformio/packages/framework-arduino-avr/variants/standard src/clark3.cpp",
+        "command": "/home/kaijewl2/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/clark3.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -Ilib/mavlink -I.pio/libdeps/uno/Servo/src -I/home/kaijewl2/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/kaijewl2/.platformio/packages/framework-arduino-avr/variants/standard src/clark3.cpp",
         "directory": "/home/kaijewl2/projects/far_star/drone_delivery/winch_code",
         "file": "src/clark3.cpp",
         "output": ".pio/build/uno/src/clark3.cpp.o"

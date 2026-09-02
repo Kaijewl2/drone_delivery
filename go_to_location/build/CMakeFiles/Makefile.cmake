@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/kaijewl2/projects/far_star/drone_delivery/go_to_location/CMakeLists.txt"
-  "CMakeFiles/4.4.0/CMakeCCompiler.cmake"
-  "CMakeFiles/4.4.0/CMakeCXXCompiler.cmake"
-  "CMakeFiles/4.4.0/CMakeSystem.cmake"
+  "CMakeFiles/4.4.2/CMakeCCompiler.cmake"
+  "CMakeFiles/4.4.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/4.4.2/CMakeSystem.cmake"
   "/usr/local/lib/cmake/MAVSDK/MAVSDKConfig.cmake"
   "/usr/local/lib/cmake/MAVSDK/MAVSDKConfigVersion.cmake"
   "/usr/local/lib/cmake/MAVSDK/MAVSDKTargets-debug.cmake"

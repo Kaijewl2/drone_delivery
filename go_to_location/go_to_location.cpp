@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 
   Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
   ConnectionResult connection_result = mavsdk.add_any_connection(
-      "udpin://127.0.0.1:14552" /*"udpin://0.0.0.0:14550"*/);
+      /*"udpin://127.0.0.1:14552"*/ "udpin://0.0.0.0:14550");
 
   if (connection_result != ConnectionResult::Success) {
     std::cerr << "Connection failed: " << connection_result << '\n';
@@ -76,7 +76,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  std::cout << "Setting takeoff alt set to: " << takeoff_altitude;
+  std::cout << "Setting takeoff alt to: " << takeoff_altitude;
   const Action::Result set_takeoff_altitude_result =
       action.set_takeoff_altitude(takeoff_altitude);
   if (set_takeoff_altitude_result != Action::Result::Success) {

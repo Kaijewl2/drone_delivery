@@ -48,6 +48,7 @@
  **********************************************************************/
 
 /*****Includes*****/
+#include "HardwareSerial.h"
 #include <Arduino.h>
 #include <Servo.h> // includes the standard Arduino servo library for control of the motor (needed to allow the Arduino to disable the motor when the limit switch is triggered - otherwise, the PWM signal could be used straight from the autopilot).
 #include <ardupilotmega/mavlink.h> // includes the MAVLink library as specified here:  https: //github.com/mavlink/c_library_v2
@@ -266,6 +267,9 @@ void loop() {
   // Set the PWM to drive the winch motor
   pulseDuration = pulseIn(
       PWM_PIN, HIGH); // Determine the PWM pulse width from the autopilot.
+  Serial.print("PWM: ");
+  Serial.println(pulseDuration);
+
   if (pulseDuration >
       POSITIVE_PWM) { // If the pulse width meets the positive criterion defined
                       // by POSITIVE_PWM then output a clockwise PWM.

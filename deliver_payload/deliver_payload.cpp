@@ -13,12 +13,12 @@ using namespace mavsdk;
 using std::chrono::seconds;
 using std::this_thread::sleep_for;
 
-void usage(const std::string &bin_name) {
+/*void usage(const std::string &bin_name) {
   std::cerr << "No coords given to " << bin_name << "\n";
-}
+}*/
 
 int main(int argc, char **argv) {
-  if (argc != 3) {
+  /*if (argc != 3) {
     usage(argv[0]);
     return 1;
   }
@@ -29,10 +29,10 @@ int main(int argc, char **argv) {
   float takeoff_altitude = 100;
 
   std::cout << "Coords: " << argv[1] << " , " << argv[2] << std::endl;
-
+*/
   Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
   ConnectionResult connection_result = mavsdk.add_any_connection(
-      "udpin://127.0.0.1:14552" /*"udpin://0.0.0.0:14550"*/);
+      /*"udpin://127.0.0.1:14552"*/ "udpin://0.0.0.0:14550");
 
   if (connection_result != ConnectionResult::Success) {
     std::cerr << "Connection failed: " << connection_result << '\n';
@@ -55,37 +55,38 @@ int main(int argc, char **argv) {
     std::cerr << "Setting rate failed: " << set_rate_result << '\n';
     return 1;
   }
-
-  // Set callback to monitor altitude while in flight
-  telemetry.subscribe_position([](Telemetry::Position position) {
-    std::cout << "Altitude: " << position.relative_altitude_m << " m\n";
-  });
-
+  /*
+    // Set callback to monitor altitude while in flight
+    telemetry.subscribe_position([](Telemetry::Position position) {
+      std::cout << "Altitude: " << position.relative_altitude_m << " m\n";
+    });
+  */
   // Check until vehicle ready to arm
   while (telemetry.health_all_ok() != true) {
-    std::cout << "Vehicle is getting ready to arm\n";
+    std::cout << "Far Star healt: Bad\n";
     sleep_for(seconds(1));
   }
+  /*
+    // Arm vehicle
+    std::cout << "Arming...\n";
+    const Action::Result arm_result = action.arm();
 
-  // Arm vehicle
-  std::cout << "Arming...\n";
-  const Action::Result arm_result = action.arm();
+    if (arm_result != Action::Result::Success) {
+      std::cerr << "Arming failed: " << arm_result << '\n';
+      return 1;
+    }
 
-  if (arm_result != Action::Result::Success) {
-    std::cerr << "Arming failed: " << arm_result << '\n';
-    return 1;
-  }
-
-  std::cout << "Setting takeoff alt to: " << takeoff_altitude;
-  const Action::Result set_takeoff_altitude_result =
-      action.set_takeoff_altitude(takeoff_altitude);
-  if (set_takeoff_altitude_result != Action::Result::Success) {
-    std::cerr << "set_takeoff_altitude(float) failed: "
-              << set_takeoff_altitude_result << std::endl;
-    return 1;
-  }
+    std::cout << "Setting takeoff alt to: " << takeoff_altitude;
+    const Action::Result set_takeoff_altitude_result =
+        action.set_takeoff_altitude(takeoff_altitude);
+    if (set_takeoff_altitude_result != Action::Result::Success) {
+      std::cerr << "set_takeoff_altitude(float) failed: "
+                << set_takeoff_altitude_result << std::endl;
+      return 1;
+    }
+    */
   // Take off
-  std::cout << "Taking off...\n";
+  /*std::cout << "Taking off...\n";
   const Action::Result takeoff_result = action.takeoff();
   if (takeoff_result != Action::Result::Success) {
     std::cerr << "Takeoff failed: " << takeoff_result << '\n';
@@ -123,10 +124,17 @@ int main(int argc, char **argv) {
     sleep_for(seconds(1));
   }
 
-  std::cout << "Landed!\n";
+  std::cout << "Landed!\n";*/
+
+  std::cout << "Starting winch turn";
+  const Action::Result set_actuator_result = action.set_actuator(7, 20);
+  if (set_actuator_result != Action::Result::Success) {
+    std::cerr << "winch turn: " << set_actuator_result << '\n';
+    return 1;
+  }
 
   // Relying on auto-disarming but keep watching telemetry
-  sleep_for(seconds(3));
+  sleep_for(seconds(30));
   std::cout << "Finished...\n";
 
   return 0;

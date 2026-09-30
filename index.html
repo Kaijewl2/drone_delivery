@@ -150,7 +150,7 @@
 
     async function send_coord_data() {
       // Endpoint requesting from
-      const url = "http://127.0.0.1:3000/api/go_to_location";
+      const url = "http://127.0.0.1:3000/api/deliver_payload";
 
       const coords_json = {
         latitude: coordinates.get_latitude(),
@@ -175,7 +175,7 @@
     async function get_data() {
 
       // Endpoint requesting from
-      const url = "http://127.0.0.1:3000/api/go_to_location";
+      const url = "http://127.0.0.1:3000/api/deliver_payload";
       try {
         const response = await fetch(url);
         if (!response.ok) {

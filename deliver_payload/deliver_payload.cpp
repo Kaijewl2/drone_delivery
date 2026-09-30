@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  auto system = mavsdk.first_autopilot(6.0);
+  auto system = mavsdk.first_autopilot(10.0);
   if (!system) {
     std::cerr << "Timed out waiting for system\n";
     return 1;

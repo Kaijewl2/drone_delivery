@@ -87,9 +87,9 @@ app.post('/api/deliver_payload', (req, res) => {
     console.log(`Script Output:\n${stdout}`);
   })
 
-
+// Testing Cloudflare; disregard me if not removed
   res.json({
-        status: "success",
+        status: "greeeet",
         name: "Miles Teg",
         role: "Putting up with none of the frumpets"
     });
